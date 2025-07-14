@@ -1,0 +1,558 @@
+/* src/App.css */
+
+/* --- Variabel Warna --- */
+:root {
+    --primary-dark: #004030; /* Hijau gelap, dari #004030 */
+    --secondary-light: #FFF9E5; /* Kuning sangat terang, dari #FFF9E5 (cocok untuk background card dan body) */
+    --accent-orange: #4A9782; /* Hijau sedang/aksen, dari #4A9782 */
+    --text-dark: #004030; /* Teks gelap, cocok dengan primary-dark */
+    --text-light: #FFF9E5; /* Teks terang, cocok dengan secondary-light */
+    --text-gray: #4A9782; /* Teks abu-abu/sekunder, cocok dengan accent-orange */
+
+    /* Warna tambahan dari palet jika diperlukan, atau sebagai alternatif */
+    --neutral-beige: #DCD0A8; /* Beige netral, dari #DCD0A8 */
+
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-strong: rgba(0, 0, 0, 0.2);
+    --line-color: #DCD0A8; /* Menggunakan neutral-beige untuk garis pemisah */
+    
+    /* Warna sebelumnya: --card-light-green: #4fde9e; akan diganti dengan secondary-light atau neutral-beige */
+}
+
+/* --- Font Import (Poppins) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Reset Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark); /* Menggunakan text-dark */
+    background-color: var(--secondary-light); /* Background body menggunakan warna terang baru */
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Struktur Aplikasi Global --- */
+.app-container {
+    min-height: 100vh;
+    max-width: 1200px; /* Lebar maksimal konten */
+    margin: 0 auto;
+    padding: 0 20px; /* Padding samping untuk responsif */
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--secondary-light); /* Menggunakan warna terang baru */
+    box-shadow: var(--shadow-light);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-dark); /* Menggunakan warna gelap */
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-menu li a {
+    color: var(--text-dark); /* Menggunakan warna gelap */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+    color: var(--accent-orange); /* Menggunakan warna aksen */
+}
+
+.navbar-button {
+    background-color: var(--accent-orange); /* Menggunakan warna aksen */
+    color: var(--text-light); /* Menggunakan warna teks terang */
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* Full rounded */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-button:hover {
+    background-color: #3b7a67; /* Sedikit lebih gelap dari accent-orange */
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--primary-dark); /* Menggunakan warna gelap */
+    border-radius: 1rem;
+    padding: 3rem;
+    color: var(--text-light); /* Menggunakan warna teks terang */
+    position: relative;
+    overflow: hidden; /* Untuk efek background */
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-light);
+}
+
+/* Background circles/shapes */
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.hero-section::before {
+    width: 150px;
+    height: 150px;
+    background-color: var(--accent-orange); /* Menggunakan warna aksen */
+    top: -50px;
+    right: -50px;
+    transform: rotate(45deg);
+}
+
+.hero-section::after {
+    width: 250px;
+    height: 250px;
+    background-color: var(--secondary-light); /* Menggunakan warna terang baru */
+    bottom: -100px;
+    left: -100px;
+    transform: rotate(-30deg);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Default ke kolom */
+    align-items: center; /* Pusatkan di default */
+    gap: 2.5rem; /* Menambah jarak antar elemen */
+    position: relative;
+    z-index: 1;
+}
+
+/* Kontainer baru untuk gambar dan kartu info */
+.hero-image-and-info {
+    position: relative;
+    width: 280px; /* Ukuran kontainer gambar */
+    height: 280px;
+    flex-shrink: 0;
+}
+
+.hero-image-container {
+    width: 100%; /* Agar mengisi .hero-image-and-info */
+    height: 100%; /* Agar mengisi .hero-image-and-info */
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem; /* Sudut sedikit melengkung */
+    box-shadow: var(--shadow-strong);
+    transform: rotate(3deg); /* Efek rotasi */
+    position: absolute; /* Tetap absolute */
+    top: 0;
+    left: 0;
+}
+
+.hero-info-card {
+    background-color: var(--secondary-light); /* Menggunakan warna terang baru */
+    color: var(--text-dark); /* Menggunakan warna gelap */
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-strong);
+    padding: 1rem;
+    width: 220px;
+    position: absolute;
+    bottom: -30px; /* Posisikan di bawah gambar */
+    left: -30px; /* Posisikan di kiri gambar */
+    transform: rotate(-4deg); /* Rotasi yang berbeda */
+    z-index: 2; /* Pastikan di atas gambar */
+}
+
+.hero-info-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero-info-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.hero-info-card p:last-child {
+    margin-bottom: 0;
+}
+.hero-info-card p .icon {
+    font-size: 1.2em; /* Ukuran ikon */
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.hero-linkedin-button {
+    background-color: var(--secondary-light); /* Menggunakan warna terang baru */
+    color: var(--primary-dark); /* Menggunakan warna gelap */
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.hero-linkedin-button:hover {
+    background-color: #E0E0DF; /* Sedikit lebih gelap dari secondary-light */
+}
+
+.hero-linkedin-button svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+
+/* --- Main Content Grid Layout --- */
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default ke 1 kolom untuk mobile */
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.main-left-column,
+.main-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+/* --- Card Dasar untuk Section --- */
+.section-card {
+    background-color: var(--neutral-beige); /* Menggunakan warna beige netral untuk card background */
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+}
+
+.section-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-dark); /* Menggunakan warna gelap */
+    margin-bottom: 1.5rem;
+}
+
+/* --- Education & Experience (Timeline Style) --- */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+.timeline-icon {
+    font-size: 1.5rem;
+    color: var(--accent-orange); /* Menggunakan warna aksen */
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-connector {
+    position: absolute;
+    left: 17px; /* Sesuaikan dengan posisi ikon */
+    top: 30px; /* Mulai di bawah ikon */
+    bottom: -15px; /* Sesuaikan untuk panjang garis */
+    width: 2px;
+    background-color: var(--line-color); /* Menggunakan line-color baru */
+    z-index: 1;
+}
+.timeline-item:last-child .timeline-connector {
+    display: none; /* Hapus garis untuk item terakhir */
+}
+
+.timeline-content {
+    flex-grow: 1;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: var(--text-dark); /* Menggunakan warna gelap */
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-dark); /* Menggunakan warna gelap */
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content span {
+    font-size: 0.95rem;
+    color: var(--text-gray); /* Menggunakan warna abu-abu/sekunder */
+}
+
+.education-relevant-courses {
+    margin-top: 0.5rem;
+    margin-left: 1.25rem; /* Sesuaikan indentasi */
+    list-style: disc; /* Menggunakan bullet point default */
+    font-size: 0.95rem; /* Ukuran font lebih kecil */
+    color: var(--text-gray); /* Menggunakan warna abu-abu/sekunder */
+}
+.education-relevant-courses li {
+    margin-bottom: 0.2rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--primary-dark); /* Latar belakang tombol project link */
+    color: var(--text-light); /* Teks tombol project link */
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Rounded button */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #00281c; /* Sedikit lebih gelap dari primary-dark */
+    text-decoration: none; /* Hapus underline pada hover */
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Kolom fleksibel */
+    gap: 1rem;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-dark); /* Menggunakan warna gelap */
+    margin-bottom: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background-color: var(--secondary-light); /* Latar belakang tag menggunakan warna terang baru */
+    color: var(--primary-dark); /* Teks tag menggunakan warna gelap */
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Language Section --- */
+.language-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--line-color); /* Menggunakan line-color baru */
+}
+
+.language-item:last-child {
+    border-bottom: none;
+}
+
+.language-item .level {
+    color: var(--text-gray); /* Menggunakan warna abu-abu/sekunder */
+}
+
+/* --- Hobbies Section --- */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--text-dark); /* Menggunakan warna gelap */
+}
+
+.hobby-item .icon {
+    font-size: 1.5rem;
+}
+
+/* --- Contact Section --- */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--text-dark); /* Menggunakan warna gelap */
+}
+
+.contact-item .icon {
+    font-size: 1.5rem;
+    color: var(--accent-orange); /* Menggunakan warna aksen */
+}
+
+.contact-item a {
+    color: var(--primary-dark); /* Warna link menggunakan warna gelap */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-orange); /* Warna hover link menggunakan warna aksen */
+    text-decoration: underline;
+}
+
+/* --- Responsive Design --- */
+@media (min-width: 768px) {
+    .navbar-content {
+        padding: 0 40px;
+    }
+    .hero-content {
+        flex-direction: row; /* Horizontal layout for tablet/desktop */
+        text-align: left;
+    }
+    .hero-text h1 {
+        font-size: 4.5rem;
+    }
+    .hero-text p {
+        margin: 0 0 1.5rem 0;
+    }
+    .hero-image-and-info { /* Sesuaikan lebar di desktop */
+        width: 350px;
+        height: 350px;
+    }
+    .hero-info-card {
+        width: 250px;
+        bottom: -40px;
+        left: -40px;
+    }
+    .main-content-grid {
+        grid-template-columns: 2fr 1fr; /* Dua kolom untuk desktop */
+    }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .hobbies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        padding: 0; /* Hapus padding samping di layar sangat besar */
+    }
+    .navbar-content {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-menu {
+        display: none; /* Sembunyikan menu di mobile kecil */
+    }
+    .navbar-logo {
+        font-size: 1.5rem;
+    }
+    .hero-section {
+        padding: 2rem;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .hero-image-and-info { /* Sesuaikan lebar di mobile kecil */
+        width: 200px;
+        height: 200px;
+    }
+    .hero-info-card {
+        width: 180px;
+        bottom: -20px;
+        left: -20px;
+        padding: 0.75rem;
+    }
+    .hero-info-card h4 {
+        font-size: 1rem;
+    }
+    .hero-info-card p {
+        font-size: 0.8rem;
+    }
+    .section-card {
+        padding: 1.5rem;
+    }
+    .section-card h2 {
+        font-size: 1.75rem;
+    }
+    .skill-tag {
+        font-size: 0.8rem;
+    }
+    .language-item, .hobby-item, .contact-item {
+        font-size: 1rem;
+    }
+}
