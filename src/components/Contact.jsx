@@ -19,7 +19,7 @@ const Contact = () => {
          <span className="icon">🔗</span><a href="https://www.linkedin.com/in/muammalhamidy" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a> 
         </p>
         <p className="contact-item">
-         <span className="icon">🐙</span><a href="https://github.com/Muhammad Hamidy" target="_blank" rel="noopener noreferrer">GitHub Profile</a> 
+         <span className="icon">🐙</span><a href="https://github.com/MuhammadHamidy" target="_blank" rel="noopener noreferrer">GitHub Profile</a> 
         </p>
       </div>
     </div>
