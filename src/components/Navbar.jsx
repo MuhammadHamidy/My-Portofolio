@@ -14,10 +14,10 @@ const Navbar = () => {
       <div className="navbar-content">
         <div className="navbar-logo">M. Mu'ammal Hamidy</div> {/* Nama Anda */}
         <ul className="navbar-menu">
-          <li><a href="#hero-section" onClick={() => handleScroll('hero-section')}>Beranda</a></li>
-          <li><a href="#education-section" onClick={() => handleScroll('education-section')}>Pendidikan</a></li>
-          <li><a href="#experience-section" onClick={() => handleScroll('experience-section')}>Pengalaman</a></li>
-          <li><a href="#skills-section" onClick={() => handleScroll('skills-section')}>Keahlian</a></li>
+          <li><a href="#hero-section" onClick={() => handleScroll('hero-section')}>Home</a></li>
+          <li><a href="#education-section" onClick={() => handleScroll('education-section')}>Education</a></li>
+          <li><a href="#experience-section" onClick={() => handleScroll('experience-section')}>Experience</a></li>
+          <li><a href="#skills-section" onClick={() => handleScroll('skills-section')}>Skills</a></li>
         </ul>
         <button className="navbar-button" onClick={() => handleScroll('contact-section')}>
           Get in Touch!
