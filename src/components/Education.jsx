@@ -9,11 +9,11 @@ const Education = () => {
           <p style={{color: '#E9E3DD', marginBottom: '1rem'}}>
             <strong>Driven by curiosity and innovation —</strong>
           </p>
-          <p style={{color: '#E9E3DD', marginBottom: '2rem'}}>
+          <p style={{color: '#E9E3DD', marginBottom: '2rem', textAlign: 'justify'}}>
             I'm currently a Computer Science student at Universitas Pertamina, 
             where I’ve been actively learning and working on various real-world tech projects since 2022.
           </p>
-          <p style={{color: '#E9E3DD', marginBottom: '2rem'}}>
+          <p style={{color: '#E9E3DD', marginBottom: '2rem', textAlign: 'justify'}}>
             I enjoy applying what I’ve learned in practical team projects, from developing mobile apps and building 
             web platforms to designing interfaces and analyzing data. This academic journey has helped me grow not only 
             in technical skills, but also in communication, leadership, and adaptability.
