@@ -2,7 +2,7 @@ import React from 'react';
 import profileImage from '../assets/foto_profiles.jpeg'; 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="about">
       <div className="hero-content">
         <h2 className="hero-title">
           Welcome to My<br />
