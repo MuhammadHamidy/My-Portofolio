@@ -1,5 +1,5 @@
 import React from 'react';
-import './app.css';
+import './App.css';
 import SpaceBackground from './components/SpaceBackground';
 import Header from './components/Header';
 import Hero from './components/Hero';
