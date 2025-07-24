@@ -1,30 +1,26 @@
-// src/components/Hero.jsx
 import React from 'react';
-import profilePic from '../assets/foto_profile.jpeg'; // Pastikan path ini benar
-
+import profileImage from '../assets/foto_profiles.jpeg'; 
 const Hero = () => {
   return (
-    <div className="hero-section">
+    <section className="hero" id="home">
       <div className="hero-content">
-        <div className="hero-image-and-info">
-          <div className="hero-image-container">
-            <img
-              src={profilePic}
-              alt="M. Mu'ammal Hamidy"
-              className="hero-image"
-            />
-          </div>
-        </div>
-        
-        <div className="hero-text">
-          <h1>Hello, I'm M. Mu'ammal Hamidy !</h1>
-          <p>
-            Computer Science student of Pertamina University with strong interest in Front End development and UI/UX design. Experienced as an operating system lab assistant and working on web development projects with expertise in UI/UX design, Flutter, and React JS. Proactive, fast learner, and skilled in teamwork and communication.
-          </p>
-
+        <h2 className="hero-title">
+          Welcome to My<br />
+          Digital Universe
+        </h2>
+        <p className="hero-subtitle">Exploring the Digital Universe</p>
+        <p className="hero-description">
+          Hi, I'm Mu'ammal Hamidy — a Computer Science student and aspiring Front-End Developer 
+          passionate about exploring user interfaces, web ecosystems, and intelligent systems. This is my mission control. 
+          Let's launch into my work.
+        </p>
+      </div>
+      <div className="hero-image">
+        <div className="profile-image">
+          <img src={profileImage} alt="Profile" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

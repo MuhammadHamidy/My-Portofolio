@@ -1,28 +1,27 @@
-// src/components/Contact.jsx
 import React from 'react';
 
 const Contact = () => {
   return (
-    <div> {/* Menghapus .section-card dari sini karena sudah di App.jsx */}
-      <h2>Contact</h2>
-      <div className="contact-list">
+    <footer className="contact" id="contact">
+      <h3 className="contact-title">Contact Me</h3>
+      <div className="contact-info">
         <p className="contact-item">
-         <span className="icon">📍</span>L72 Harapan Mulya, Central Jakarta 10640, Indonesia 
+          <strong>Email:</strong> hamidym84@gmail.com
         </p>
         <p className="contact-item">
-         <span className="icon">✉️</span><a href="mailto:hamidym84@gmail.com">hamidym84@gmail.com</a>
+          <strong>LinkedIn:</strong> http://www.linkedin.com/in/muammalhamidy
         </p>
         <p className="contact-item">
-         <span className="icon">📞</span><a href="tel:+6283808191352">(+62) 83808191352</a> 
+          <strong>GitHub:</strong> https://github.com/MuhammadHamidy
         </p>
         <p className="contact-item">
-         <span className="icon">🔗</span><a href="https://www.linkedin.com/in/muammalhamidy" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a> 
-        </p>
-        <p className="contact-item">
-         <span className="icon">🐙</span><a href="https://github.com/MuhammadHamidy" target="_blank" rel="noopener noreferrer">GitHub Profile</a> 
+          <strong>Phone:</strong> +62 838-0819-1352
         </p>
       </div>
-    </div>
+      <div className="contact-footer">
+        <p className="copyright">© 2025 by M. Mu'ammal Hamidy</p>
+      </div>
+    </footer>
   );
 };
 
