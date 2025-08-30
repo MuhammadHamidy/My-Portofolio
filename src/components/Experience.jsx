@@ -50,6 +50,14 @@ const Experience = () => {
       projectLink: 'https://github.com/MuhammadHamidy/TubesPemograman-web'
     },
     {
+      date: 'July 2024 – September 2024',
+      title: 'UI/UX Designer (Team Project)',
+      company: 'Competition Project , Universitas Pertamina',
+      description: 'Designed and developed the UI/UX of EventNet, a platform that connects SMEs with nearby events and enables visitors to explore available tenants and pre-order products before the event',
+      logo: '💻',
+      projectLink: 'https://www.figma.com/design/IMlE0OMQmCPS2S5Wuh5BX4/EventNet?node-id=0-1&t=nUWvVrk7UwqMF8J8-1'
+    },
+    {
       date: 'January 2024 – July 2024',
       title: 'Teaching Assistant',
       company: 'Operating Systems Lab, Universitas Pertamina',

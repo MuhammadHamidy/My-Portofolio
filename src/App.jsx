@@ -6,7 +6,6 @@ import TechStack from './components/TechStack';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
-
 const App = () => {
   return (
     <div>
